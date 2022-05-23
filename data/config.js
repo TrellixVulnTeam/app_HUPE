@@ -1,6 +1,5 @@
 const configger = require('nconf');
 const fs = require('fs');
-const path = require('path');
 
 function LoadConfig() {
     configger.load = function(defaults) {
@@ -24,10 +23,11 @@ function LoadConfig() {
 }
 
 global.config = LoadConfig();
-global.config.dir.client = path.join(__dirname, '..', global.config.dir.template + '/' + global.config.dir.skin + '/');
-global.config.template = './' + global.config.dir.template + '/' + global.config.dir.skin + '/';
-global.config.kendocss = './' + global.config.dir.template + '/' + global.config.dir.skin + '/css/kendo/';
-global.config.kendojs = './' + global.config.dir.template + '/' + global.config.dir.skin + '/js/kendo/';
-global.config.js = './' + global.config.dir.template + '/' + global.config.dir.skin + '/js/';
-global.config.jscomponent = './' + global.config.dir.template + '/' + global.config.dir.skin + '/js/component/';
-global.config.css = './' + global.config.dir.template + '/' + global.config.dir.skin + '/css/';
+global.config.prefiks = './../';
+global.config.dir.client = global.path.join(__dirname, '..', global.config.dir.template + '/' + global.config.dir.skin + '/');
+global.config.template = global.config.prefiks + global.config.dir.template + '/' + global.config.dir.skin + '/';
+global.config.kendocss = global.config.prefiks + global.config.dir.template + '/' + global.config.dir.skin + '/css/kendo/';
+global.config.kendojs = global.config.prefiks + global.config.dir.template + '/' + global.config.dir.skin + '/js/kendo/';
+global.config.js = global.config.dir.template + '/' + global.config.dir.skin + '/js/';
+global.config.jscomponent = global.config.prefiks + global.config.dir.template + '/' + global.config.dir.skin + '/js/component/';
+global.config.css = global.config.prefiks + global.config.dir.template + '/' + global.config.dir.skin + '/css/';

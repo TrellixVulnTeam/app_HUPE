@@ -5,7 +5,6 @@ const server = require('http').createServer(app);
 
 global.path = path;
 
-
 global.function = require('./component/function');
 require('./data/config');
 
@@ -15,12 +14,7 @@ global.io = io;
 
 require("./component/socket_events");
 
-var __importDefault = (this && this.__importDefault) || function(mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-
-const Db = __importDefault(require('./component/src/sql')).default;
+const Db = require('./component/src/sql').default;
 const db = new Db(global.config.bd);
 
 (async function() {
