@@ -221,6 +221,7 @@ class Db extends Queryable {
         if (!skiptzfix) {
             pool.on('connection', function (connection) {
                // connection.query('SET time_zone="UTC"');
+               console.log('Подключение к MySql успешно');
             });
         }
         super(pool);

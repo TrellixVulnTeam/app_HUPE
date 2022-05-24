@@ -1,0 +1,30 @@
+{
+    "configFile": "./data/config.json",
+    "server": {
+        "http": "http",
+        "host": "localhost",
+        "port": 3000
+    },
+    "dir": {
+        "component": {
+            "name": "./component/",
+            "ext": ".js"
+        },
+        "template": "template",
+        "skin": "default",
+        "modul": "modul"
+    },
+    "skin": {
+        "sass": "kendo.default-ocean-blue.min.css",
+        "less": "kendo.common.min.css"
+    },
+    "bd": {
+        "host": "localhost",
+        "user": "root",
+        "database": "fto_online",
+        "password": "33Hdinjr"
+    },
+    "cookie": {
+        "maxsave": 10
+    }
+}

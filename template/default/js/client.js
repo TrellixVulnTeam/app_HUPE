@@ -22,10 +22,8 @@ sockets.on('connection', (socket) => {
         if ((data.script) && (data.script != '')) {
             eval(data.script);
         }
-        if ((data.append) && (data.append != '')) {
-            if (!data.html)
-                data.html = '';
-            $(data.append).append(data.html);
+        if ((data.append) && (data.append.html != '')) {
+            $(data.append.elem).append(data.append.html);
         }
     });
 });

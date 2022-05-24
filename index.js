@@ -12,15 +12,14 @@ require('./data/config');
 const io = require("./component/socket_connect")(server);
 global.io = io;
 
+global.db = new require('./component/mysql');
+
 require("./component/socket_events");
 
-const Db = require('./component/src/sql').default;
-const db = new Db(global.config.bd);
-
-(async function() {
-    const rows = await db.getall('SELECT * FROM dle_users Limit 10');
-    console.log(rows)
-})();
+// (async function() {
+//     const rows = await db.getall('SELECT * FROM dle_users Limit 10');
+//     console.log(rows)
+// })();
 
 // var mysql = new Tmysql;
 // global.mysql = mysql;
