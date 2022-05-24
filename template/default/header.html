@@ -1,15 +1,20 @@
 <!--Стили-->
-<link href="{config.kendocss}{config.skin.sass}" type="text/css" rel="stylesheet">
-<link href="{config.kendocss}{config.skin.less}" type="text/css" rel="stylesheet">
+<link href="`{config.kendocss}``{config.skin.sass}`" type="text/css" rel="stylesheet">
+<link href="`{config.kendocss}``{config.skin.less}`" type="text/css" rel="stylesheet">
+<link href="`{global.config.css}`style.css" type="text/css" rel="stylesheet">
+<link href="`{global.config.css}`styl.scss" rel="stylesheet">
+<link href="`{global.config.css}`styl.sass" rel="stylesheet">
+
 
 <!--Скрипты-->
-<script src="{config.jscomponent}jquery-3.5.1.min.js"></script>
-<script src="{config.jscomponent}jquery.cookie.js"></script>
-<script src="{config.kendojs}kendo.all.min.js"></script>
+<script src="`{config.jscomponent}`jquery-3.5.1.min.js"></script>
+<script src="`{config.jscomponent}`jquery.cookie.js"></script>
+<script src="`{config.kendojs}`kendo.all.min.js"></script>
+
 
 <script src="./socket.io/socket.io.js"></script>
 
-{this.compile("js/header_src.js", "js")}
+`{this.compile("js/header_src.js", "js")}`
 
 
-<script src="{config.js}client.js"></script>
+<script src="`{config.js}`client.js"></script>

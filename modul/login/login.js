@@ -4,18 +4,11 @@ module.exports = function(data) {
     global.active = login.active(data);
     if (!global.active) {
         global.socket.emit('message', {
+            script: '$("body").html("");',
             append: {
                 elem: 'body',
-                html: '<h1>Эти пришло авторизация</h1>'
+                html: global.aps.compile(global.config.dir.modul + '/login/login.html'),
             }
         })
-        setTimeout(() => {
-            global.socket.emit('message', {
-                append: {
-                    elem: 'body',
-                    html: '<h1>Эти 222222</h1>'
-                }
-            })
-        }, 5000);
     }
 }

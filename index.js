@@ -15,6 +15,7 @@ global.io = io;
 global.db = new require('./component/mysql');
 
 require("./component/socket_events");
+require("./gulpfile");
 
 // (async function() {
 //     const rows = await db.getall('SELECT * FROM dle_users Limit 10');
@@ -25,10 +26,9 @@ require("./component/socket_events");
 // global.mysql = mysql;
 // global.mysql.connect();
 
-
-const aps = require("./component/app");
-var $aps = new aps(app);
+const ap = require("./component/app");
+global.aps = new ap(app);
 
 app.use(express.static(global.path.join(__dirname, './')));
 
-$aps.get("index.html");
+global.aps.get("index.html");

@@ -31,3 +31,5 @@ global.config.kendojs = global.config.prefiks + global.config.dir.template + '/'
 global.config.js = global.config.dir.template + '/' + global.config.dir.skin + '/js/';
 global.config.jscomponent = global.config.prefiks + global.config.dir.template + '/' + global.config.dir.skin + '/js/component/';
 global.config.css = global.config.prefiks + global.config.dir.template + '/' + global.config.dir.skin + '/css/';
+
+global.config.dir.clientmodul = global.config.dir.client + global.config.dir.modul + '/';

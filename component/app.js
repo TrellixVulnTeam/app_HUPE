@@ -13,7 +13,7 @@ module.exports = class apps {
         return fs.readFileSync(global.config.dir.client + file, "utf8");
     }
     replaceAll = (html, element) => {
-        var config = global.config;
+        var config = global.config
         var el = element;
         element = element.toLowerCase().replace('{', '').replace('}', '').replaceAll('`', '').replaceAll(' ', '').trim();
         eval(`
@@ -26,10 +26,8 @@ module.exports = class apps {
         return html;
     }
     compilefile = (html, rezim = '') => {
-        if (rezim.toLowerCase() == 'js') {
-            var matches = Array.from(new Set(html.match(/\`{(.*?)}`/gi)));
-        } else
-            var matches = Array.from(new Set(html.match(/{(.*?)}/gi)));
+
+        var matches = Array.from(new Set(html.match(/`{(.*?)}`/gi)));
 
         for (var element of matches) {
             html = this.replaceAll(html, element);

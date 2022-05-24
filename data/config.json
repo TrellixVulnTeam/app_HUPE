@@ -12,7 +12,8 @@
         },
         "template": "template",
         "skin": "default",
-        "modul": "modul"
+        "modul": "modul",
+        "img": "./img/"
     },
     "skin": {
         "sass": "kendo.default-ocean-blue.min.css",

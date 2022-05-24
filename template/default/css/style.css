@@ -1,0 +1,81 @@
+.div_login {
+    padding: "40px";
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-content: space-around;
+    align-items: center;
+}
+
+.div_login .block {
+    border: 1px solid;
+    width: 400px;
+    padding: 40px;
+}
+
+.formimg img {
+    height: 31px;
+    position: relative;
+    max-width: 237px;
+}
+
+.formimg .logoop {
+    margin-left: 4px !important;
+    transition: transform 500ms linear;
+    /* padding-right: 48px; */
+}
+
+.title {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-bottom: 1.25rem;
+    margin-top: 1.25rem;
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 300;
+    line-height: 1.75rem;
+    padding-bottom: 2.3632px;
+    padding-top: 2.3632px;
+    color: #1b1b1b;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 0;
+    margin-top: 16px;
+    margin-bottom: 12px;
+}
+
+@font-face {
+    font-family: "Stanberry";
+    src: url('./../../../font/Stanberry.ttf') format("opentype");
+}
+
+body {
+    font-family: "Stanberry";
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 400;
+    font-size: .9375rem;
+    line-height: 1.25rem;
+    padding-bottom: 0.227px;
+    padding-top: 0.227px;
+    /* background-color: #fff; */
+    /* background-image: url(./../../../img/background/black.jpg); */
+}
+
+.k-floating-label-container:focus-within>.k-label {
+    top: 21px;
+    left: 13px;
+}
+
+.k-input-lg .k-input-inner,
+.k-picker-lg .k-input-inner {
+    padding: 6px 8px !important;
+}
+
+.k-floating-label-container.k-focus>.k-label,
+.k-floating-label-container.k-state-focused>.k-label,
+.k-floating-label-container>.k-label {
+    left: 34px;
+    top: 19px;
+}
