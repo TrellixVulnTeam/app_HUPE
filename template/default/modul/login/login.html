@@ -1,33 +1,21 @@
-<div class="div_login ">
+<div class="div_login" rez='0'>
     <div class="block k-block k-shadow">
+
         <div class="formimg" style="display: block;">
             <img class="logofto" src="`{config.dir.img}`ft.png"><img class="logoop" src="`{config.dir.img}`o.png">
+        </div>
+        <div id="idzamen">
             <div class="Voiti title"><span>Войти</span></div>
         </div>
-        <div class="section">
-            <input id="login" style="width: 100%;" />
-        </div>
+        <form id="formlofin" onsubmit="return false;">
+            <div class="section">
+                <input id="login" name="login" style="width: 100%;" validationMessage="Введите логин" required />
+            </div>
+        </form>
         <p style="text-align: right;margin-top: 28px;">
+            <button id="idnazad" style="display: none;">Назад</button>
             <button id="iddalee">Далее</button>
         </p>
     </div>
 
 </div>
-
-<script>
-    var inlogin = $("#login").kendoTextBox({
-        placeholder: "Пароль",
-        label: {
-            content: "Электронная почта, телефон, логин",
-            floating: true
-        },
-        size: "large",
-        fillMode: "flat",
-        rounded: "full"
-    }).data("kendoTextBox");
-
-    $("#iddalee").kendoButton({
-        themeColor: "primary",
-        enable: true
-    });
-</script>,

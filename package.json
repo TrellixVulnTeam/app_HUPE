@@ -24,12 +24,15 @@
         "compass-node": "^0.1.6",
         "css3": "^0.0.1",
         "express": "^4.18.1",
+        "file-url": "^4.0.0",
+        "ldap-authentication": "^2.2.9",
         "mysql": "^2.18.1",
         "mysql2": "^2.3.3",
         "nconf": "^0.12.0",
         "node-sass": "^7.0.1",
         "scss": "^0.2.4",
         "socket.io": "^4.5.1",
-        "stream": "^0.0.2"
+        "stream": "^0.0.2",
+        "url": "^0.11.0"
     }
 }

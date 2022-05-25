@@ -2,7 +2,7 @@ const sockets = io("http://localhost:3000");
 
 //user = get_cookie('user');
 user = {
-    login: 'hova',
+    login: get_cookie('user'),
 }
 
 sockets.emit('conn', user);
@@ -23,7 +23,7 @@ sockets.on('connection', (socket) => {
             eval(data.script);
         }
         if ((data.append) && (data.append.html != '')) {
-            $(data.append.elem).append(data.append.html);
+            $(data.append.elem).add_elem(data.append.html);
         }
     });
 });

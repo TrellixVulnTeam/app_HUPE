@@ -1,0 +1,23 @@
+.contact-position {
+    margin: 0px;
+    font-size: 0.8em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 250px;
+}
+
+.contact-name {
+    font-size: 1.3em;
+    font-weight: normal;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0px;
+    max-width: 250px;
+}
+
+.k-hbox {
+    margin-top: 12px;
+    margin-bottom: 13px;
+}

@@ -27,5 +27,14 @@
     },
     "cookie": {
         "maxsave": 10
+    },
+    "url": {
+        "foto": "https://support.fto.com.ru/uploads/fotos/"
+    },
+    "ldap": {
+        "url": "ldap://10.1.82.6",
+        "user": "CN=redmine,OU=Technical,OU=Users,OU=FTO,DC=ftoprj,DC=lcl",
+        "pass": "sup_2004_port",
+        "dn": "OU=FTO,dc=ftoprj,dc=lcl"
     }
 }

@@ -1,0 +1,24 @@
+<div class="k-hbox">
+    <div id="avatar" class="avatar-margin-right-5"></div>
+    <div style="margin-left: 10px">
+        <h2 class="contact-name" title="`{row.fullname}`">`{row.fullname}`</h2>
+        <p class="contact-position" title="`{row.dolznost}`">`{row.dolznost}`</p>
+        <p class="contact-position" title="`{row.department}`">`{row.department}`</p>
+    </div>
+</div>
+
+<script>
+    $('#avatar').kendoAvatar({
+        type: 'image',
+        size: "large",
+        image: "`{config.url.foto}``{row.foto}`"
+    })
+    $("#idnazad").css('display', '')
+    inlogin.setOptions({
+        label: {
+            content: "Пароль",
+        },
+    });
+    $('#login').val('').attr('validationMessage', 'Введите пароль').attr('type', 'password').focus();
+    $('.div_login').attr('rez', '1');
+</script>

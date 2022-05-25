@@ -15,8 +15,15 @@ global.io.on('connection', function(socket) {
 
     });
 
-    socket.on('message', function(data) {
-        var time = (new Date).toLocaleTimeString()
+    socket.on('message', async function(data) {
+
+        if (data.modul.name && data.modul.name != '') {
+            const func = require('./../' + global.config.dir.modul + '/' + data.modul.name + '/' + data.modul.file);
+            var mfun = '';
+            if (data.modul.function && data.modul.function != '')
+                mfun = '.' + data.modul.function;
+            eval(`func${mfun}(data)`);
+        }
 
     })
 
