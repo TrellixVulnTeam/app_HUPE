@@ -38,7 +38,8 @@ var $butdalee = $("#iddalee").kendoButton({
                     function: "getpass",
                 },
                 login: logins,
-                pass: $('#login').val()
+                pass: $('#login').val(),
+                session: session
             }
         }
         get_io(data);
@@ -63,7 +64,7 @@ $("#idnazad").kendoButton({
             },
         });
         $('.k-form-error').remove();
-        $('#login').val('').attr('validationMessage', 'Введите логин').attr('type', 'text').focus();
+        $('#login').val('').attr('validationMessage', 'Введите логин').attr('type', 'text').attr('name', 'login').focus();
         $('#idzamen').html('<div class="Voiti title"><span>Войти</span></div>');
         $('.div_login').attr('rez', '0');
     }

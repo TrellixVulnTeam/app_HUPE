@@ -1,0 +1,46 @@
+.divbody {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    height: 100%;
+}
+
+.blockavasts {
+    position: absolute;
+    padding: 2px;
+    background-color: inherit;
+    border-radius: 50%;
+}
+
+.avastat {
+    background-position: 50% 50% !important;
+    background-repeat: no-repeat !important;
+    -webkit-background-size: cover !important;
+    background-size: cover !important;
+    transition: all 0.7s ease;
+}
+
+.ava_medium {
+    margin-left: 20px;
+    margin-top: -14px;
+}
+
+.ava_medium .avastat {
+    width: 13px;
+    height: 13px;
+}
+
+.ava_large {
+    margin-left: 44px;
+    margin-top: -22px;
+}
+
+.ava_large .avastat {
+    width: 20px;
+    height: 20px;
+}
+
+.clavatart {
+    background-color: inherit;
+}

@@ -2,9 +2,14 @@ module.exports = class Tlogin {
     constructor() {
 
     }
-    active = (data) => {
+    active = async(data) => {
         if (data.login && data.login != '') {
-            return true;
+            //var row = await this.search('hash', 'name=?', [data.login], 1);
+            if (global.config.test)
+                return true;
+            if (data.session && data.session == data.hash) {
+                return true;
+            } else return false;
         } else {
             return false;
         }
@@ -28,7 +33,7 @@ module.exports = class Tlogin {
 
         return user;
     }
-    search = (col, where, massiv = null, limit = 0) => {
+    search = async(col, where, massiv = null, limit = 0) => {
         const table = {
             dolznost: "hv_s_dolznost",
             department: "hv_s_otdel"
@@ -60,10 +65,11 @@ module.exports = class Tlogin {
 
         var sql = `select ${col} from dle_users ${kon} ${where} ${limit}`;
         if (limit = 1) {
-            var rows = global.db.getrow(sql, massiv);
+            var rows = await global.db.getrow(sql, massiv);
         } else {
-            var rows = global.db.getAll(sql, massiv);
+            var rows = await global.db.getAll(sql, massiv);
         }
+        global.row = rows;
         return rows;
     };
 

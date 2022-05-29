@@ -1,4 +1,5 @@
 {
+    "test": true,
     "configFile": "./data/config.json",
     "server": {
         "http": "http",
@@ -10,13 +11,16 @@
             "name": "./component/",
             "ext": ".js"
         },
-        "template": "template",
+        "template": "/template",
         "skin": "default",
         "modul": "modul",
-        "img": "./img/"
+        "img": "/img/"
+    },
+    "site": {
+        "name": "FTO apperande"
     },
     "skin": {
-        "sass": "kendo.default-ocean-blue.min.css",
+        "sass": "kendo.default.min.css",
         "less": "kendo.common.min.css"
     },
     "bd": {
@@ -29,12 +33,17 @@
         "maxsave": 10
     },
     "url": {
-        "foto": "https://support.fto.com.ru/uploads/fotos/"
+        "foto": "https://support.fto.com.ru/uploads/fotos/",
+        "status": "/img/status/",
+        "default": "bz"
     },
     "ldap": {
         "url": "ldap://10.1.82.6",
         "user": "CN=redmine,OU=Technical,OU=Users,OU=FTO,DC=ftoprj,DC=lcl",
         "pass": "sup_2004_port",
         "dn": "OU=FTO,dc=ftoprj,dc=lcl"
+    },
+    "status": {
+        "default": 1
     }
 }

@@ -1,0 +1,40 @@
+.header_menu {
+    width: 100%;
+    height: 57px;
+    display: flex;
+    border-bottom: 1px solid #d9d9d9;
+    align-items: center;
+}
+
+.vibleft_menu {
+    margin-left: 5px;
+    width: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0 0 0 0.8rem;
+    text-align: left;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 18px;
+    color: #00000094;
+}
+
+.texvibmenu {
+    margin-right: 3px;
+}
+
+.headbut_menu {
+    padding: 0 10px 0 0;
+    right: 0;
+    width: auto;
+    flex: auto;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.headbut_menu span {
+    font-size: 20px;
+    color: #00000094;
+    cursor: pointer;
+}

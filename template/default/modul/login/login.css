@@ -6,6 +6,7 @@
     justify-content: space-around;
     align-content: space-around;
     align-items: center;
+    transition: all 0.7s ease;
 }
 
 .div_login .block {
@@ -28,4 +29,25 @@
     margin-left: 4px !important;
     transition: transform 500ms linear;
     /* padding-right: 48px; */
+}
+
+#idzamen {
+    min-height: 85px;
+}
+
+.k-floating-label-container:focus-within>.k-label {
+    top: 21px;
+    left: 13px;
+}
+
+.k-input-lg .k-input-inner,
+.k-picker-lg .k-input-inner {
+    padding: 6px 8px !important;
+}
+
+.k-floating-label-container.k-focus>.k-label,
+.k-floating-label-container.k-state-focused>.k-label,
+.k-floating-label-container>.k-label {
+    left: 34px;
+    top: 19px;
 }

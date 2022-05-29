@@ -1,0 +1,107 @@
+.clleft {
+    width: 64px;
+    min-width: 64px;
+    height: calc(100% - 50px);
+    background: #ebebeb;
+    padding-left: 2px;
+}
+
+.clsupl {
+    /* border: 1px solid red; */
+    min-width: 278px;
+    max-width: 278px;
+    height: calc(100% - 50px);
+    box-shadow: rgb(0 0 0 / 5%) 0px 6px 24px 0px, rgb(0 0 0 / 8%) 0px 0px 0px 1px;
+}
+
+.clleftbut {
+    width: 100%;
+    height: 47px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    align-items: stretch;
+    cursor: pointer;
+    color: #838383;
+    flex-wrap: wrap;
+    padding-top: 7px;
+    align-content: stretch;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.clleftbut:hover {
+    color: #5b5fc7;
+    background: #f5f5f5;
+}
+
+.clleftbut span {
+    width: 100%;
+    font-size: 28px;
+}
+
+.clleftbut p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    font-size: 8px;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    margin-top: -4px;
+    text-decoration: none;
+}
+
+.butverh {
+    margin-top: 2px;
+}
+
+.butactive {
+    border-left-style: solid;
+    border-color: #5b5fc7;
+    border-width: 2px;
+    color: #5b5fc7;
+    font-weight: 600;
+}
+
+.box-shadow::before {
+    background: linear-gradient(to right, transparent, #aaa);
+    content: "";
+    height: 100%;
+    opacity: .2;
+    pointer-events: none;
+    position: absolute;
+    margin-left: -11px;
+    width: 0.8rem;
+    z-index: 2;
+}
+
+@media screen and (max-width: 950px) {
+    .clsupl {
+        position: absolute;
+        left: 65px;
+        display: none;
+    }
+    .clleft:hover+.clsupl {
+        display: block;
+    }
+    .clsupl:hover {
+        display: block;
+    }
+    .clleftflex {
+        min-width: 0;
+    }
+    .hedtext {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: block;
+        font-size: 10px;
+        text-rendering: optimizeLegibility;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        margin-left: -27px;
+        text-decoration: none;
+    }
+}

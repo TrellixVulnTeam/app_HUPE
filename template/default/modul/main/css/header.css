@@ -1,0 +1,163 @@
+.cltop {
+    -webkit-app-region: drag;
+    background-color: #444791;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.clleftflex {
+    display: flex;
+    height: 100%;
+    align-content: center;
+    flex-direction: row;
+    align-items: center;
+    min-width: 367px;
+}
+
+.hduserblock {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 10px;
+    cursor: pointer;
+    margin-right: 6px;
+    background-color: inherit;
+}
+
+.hduserblock:hover {
+    background-color: #5b5fc7;
+}
+
+.hedmenu {
+    margin-left: 0;
+    padding: 0 25px;
+    height: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.hedmenu:hover {
+    background-color: #5b5fc7;
+}
+
+.hedtext {
+    flex: auto;
+    font-weight: 600;
+    padding-left: 2rem;
+    -webkit-font-smoothing: antialiased;
+    min-width: 182px;
+    max-width: 200px;
+    transition: all 0.3s ease;
+}
+
+.headsearch {
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-end;
+    align-items: center;
+    /* min-width: 401px; */
+    width: 100%;
+    flex-direction: row-reverse;
+}
+
+.clrightflex {
+    height: 100%;
+    width: 143px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: inherit;
+}
+
+.headinput {
+    max-width: 530;
+    background: rgb(255 255 255 / 68%);
+}
+
+.headsearch .k-input-inner:focus {
+    background: rgb(255 255 255);
+}
+
+.hedtoxhor {
+    margin-right: 5px;
+    cursor: pointer;
+    height: 100%;
+}
+
+.hedtoxhor:hover {
+    font-weight: 600;
+}
+
+.k-popover-header .k-hbox {
+    min-width: 245px;
+    background-color: inherit;
+}
+
+.k-popover-header .contact-name {
+    font-weight: 600;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 170px;
+}
+
+.k-popover-header .contact-position {
+    font-size: 12px;
+}
+
+.statusbut {
+    font-size: 12px;
+    display: flex;
+    margin-top: 6px;
+    white-space: nowrap;
+    max-width: 171px;
+}
+
+div#idvibstatus {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+div#idvibstatus:hover {
+    color: #5b5fc7;
+    fill: currentColor;
+}
+
+div#idzadpodpis {
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+div#idzadpodpis:hover {
+    color: #5b5fc7;
+    fill: currentColor;
+}
+
+.k-menu-link {
+    padding: 2px 8px;
+    color: black;
+}
+
+.k-menu-link img {
+    height: 17px;
+}
+
+ul#menu_status {
+    margin-top: -43px;
+    margin-left: -64px;
+    background-color: #fdfdfd;
+}
+
+.k-menu-vertical>.k-menu-item+.k-menu-item {
+    margin-top: 4px;
+}

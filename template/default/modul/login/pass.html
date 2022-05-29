@@ -8,10 +8,9 @@
 </div>
 
 <script>
-    $('#avatar').kendoAvatar({
-        type: 'image',
+    $('#avatar').avatar({
         size: "large",
-        image: "`{config.url.foto}``{row.foto}`"
+        image: "`{row.foto}`"
     })
     $("#idnazad").css('display', '')
     inlogin.setOptions({
@@ -19,6 +18,6 @@
             content: "Пароль",
         },
     });
-    $('#login').val('').attr('validationMessage', 'Введите пароль').attr('type', 'password').focus();
+    $('#login').val('').attr('validationMessage', 'Введите пароль').attr('type', 'password').attr('name', 'password').focus();
     $('.div_login').attr('rez', '1');
 </script>

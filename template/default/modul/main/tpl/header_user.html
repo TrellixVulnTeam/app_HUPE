@@ -1,0 +1,110 @@
+<div class="clleftflex">
+    <div class="hedmenu">
+        <span class="k-icon k-i-delicious-box"></span>
+    </div>
+    <div class="hedtext">`{global.config.site.name}`</div>
+</div>
+<div class="headsearch">
+    <span class="k-textbox k-input k-input-md k-rounded-md k-input-solid headinput" style="width: 100%;">
+    <span class="k-input-prefix">
+        <span class="k-input-icon k-icon k-i-search"></span>
+    </span>
+    <input id="icon-left" type="text" class="k-input-inner">
+    </span>
+</div>
+
+<div class="clrightflex">
+    <span class="k-icon k-i-more-horizontal hedtoxhor"></span>
+    <div class="hduserblock">
+        <div id="id`{row.name}`" class="clavatar">
+
+        </div>
+    </div>
+</div>
+
+<script id="popover-header" type="text/x-kendo-template">
+    <div class="k-hbox">
+        <div id="idpop`{row.name}`" class="avatar-margin-right-5"></div>
+        <div style="margin-left: 10px">
+            <div class="contact-name" title="`{row.fullname}`">`{row.fullname}`</div>
+            <div class="contact-position" title="`{row.email}`">`{row.email}`</div>
+            <div class="statusbut">
+                <div id="idvibstatus"><span id="idpostatus">В сети</span><span class="k-icon k-i-arrow-chevron-down"></span></div>
+                <div id="idzadpodpis">Задать подпись</div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<ul id="menu_status" style="display: none;">
+    `{aps.compilemenustatus()}`
+</ul>
+
+<script>
+    $("#id`{row.name}`").avatar({
+        alt: "`{row.fullname}`",
+        image: "`{row.foto}`",
+        // status: "active.svg",
+        user: "`{row.name}`",
+        title: "В сети"
+    });
+
+    data = {
+        modul: {
+            name: "function",
+            function: "set_status",
+        },
+        user: '`{row.name}`',
+        socket: socket_id
+    }
+    get_io(data)
+
+    $(".hduserblock").kendoPopover({
+        showOn: "click",
+        header: kendo.template($("#popover-header").html()),
+        body: "<div id='popobod'>Content description</div>",
+        actionsPosition: "center",
+        actions: [{
+            text: "Выйти",
+            click: function() {
+                set_cookie('hash', '');
+                set_cookie('login', '');
+                location.reload();
+            }
+        }],
+        show: function() {
+            setTimeout(() => {
+                $("#idpop`{row.name}`").avatar({
+                    size: "large",
+                    alt: "`{row.fullname}`",
+                    image: "`{row.foto}`",
+                    user: "`{row.name}`"
+                });
+            }, 50);
+
+            $("#popobod").closest('.k-popover').find('.k-popover-callout').css('right', '10px').css('left', 'auto');
+
+            menu_status = $("#menu_status").kendoContextMenu({
+                target: "#idvibstatus",
+                appendTo: ".k-popover",
+                showOn: "click",
+                animation: false,
+                select: function(e) {
+                    $elem = $(e.item); //e.target
+                    data = {
+                        modul: {
+                            name: "function",
+                            function: "set_status",
+                        },
+                        user: '`{row.name}`',
+                        val: $elem.attr('status'),
+                        rezim: 1,
+                        socket: socket_id
+                    }
+                    get_io(data)
+                }
+            });
+
+        }
+    });
+</script>

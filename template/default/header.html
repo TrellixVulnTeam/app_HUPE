@@ -2,6 +2,7 @@
 <link href="`{config.kendocss}``{config.skin.sass}`" type="text/css" rel="stylesheet">
 <link href="`{config.kendocss}``{config.skin.less}`" type="text/css" rel="stylesheet">
 <link href="`{global.config.css}`style.css" type="text/css" rel="stylesheet">
+<link href="`{global.config.css}`icon.css" type="text/css" rel="stylesheet">
 
 
 
@@ -11,9 +12,11 @@
 <script src="`{config.kendojs}`kendo.all.min.js"></script>
 
 
-<script src="./socket.io/socket.io.js"></script>
+<script src="/socket.io/socket.io.js"></script>
 
-`{this.compile("js/header_src.js", "js")}`
+<title></title>
+
+`{this.compile("js/header_src.js", "js", req)}`
 
 
 <script src="`{config.js}`client.js"></script>

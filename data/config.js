@@ -23,7 +23,7 @@ function LoadConfig() {
 }
 
 global.config = LoadConfig();
-global.config.prefiks = './../';
+global.config.prefiks = '';
 global.config.dir.client = global.path.join(__dirname, '..', global.config.dir.template + '/' + global.config.dir.skin + '/');
 global.config.template = global.config.prefiks + global.config.dir.template + '/' + global.config.dir.skin + '/';
 global.config.kendocss = global.config.prefiks + global.config.dir.template + '/' + global.config.dir.skin + '/css/kendo/';

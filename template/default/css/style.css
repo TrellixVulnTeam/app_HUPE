@@ -16,12 +16,13 @@ body {
 body {
     font-family: "geometria";
     font-size: 15px;
-    line-height: 20px;
+    height: 48px;
     font-weight: 400;
     font-size: .9375rem;
     line-height: 1.25rem;
     padding-bottom: 0.227px;
     padding-top: 0.227px;
+    margin: 0;
     background-color: #f3f2f1;
     /* background-image: url(./../../../img/background/black.jpg); */
 }
@@ -45,19 +46,8 @@ body {
     margin-bottom: 12px;
 }
 
-.k-floating-label-container:focus-within>.k-label {
-    top: 21px;
-    left: 13px;
-}
-
-.k-input-lg .k-input-inner,
-.k-picker-lg .k-input-inner {
-    padding: 6px 8px !important;
-}
-
-.k-floating-label-container.k-focus>.k-label,
-.k-floating-label-container.k-state-focused>.k-label,
-.k-floating-label-container>.k-label {
-    left: 34px;
-    top: 19px;
+.onelem {
+    width: 100%;
+    height: 100%;
+    position: absolute;
 }
