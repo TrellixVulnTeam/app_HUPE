@@ -34,9 +34,19 @@ module.exports = async function(data) {
     if (fs.existsSync(director)) {
         files = fs.readdirSync(director);
         for (file of files) {
-            var rhtml = fs.readFileSync(director + file, "utf8");
-            var ids = file.replace('.html', '');
-            $(`#${ids}`).html(rhtml);
+            if (fs.lstatSync(director + file).isFile()) {
+                var rhtml = fs.readFileSync(director + file, "utf8");
+                var ids = file.replace('.html', '');
+                $(`#${ids}`).html(rhtml);
+                var filjs = global.config.dir.clientmodul + arr_url[1] + '/js/' + ids + '.js';
+                if (fs.existsSync(filjs)) {
+                    $(`#${ids}`).append('<script src="' + global.config.template + global.config.dir.modul + '/' + arr_url[1] + '/js/' + ids + '.js"></script>');
+                }
+                var filcss = global.config.dir.clientmodul + arr_url[1] + '/css/' + ids + '.css';
+                if (fs.existsSync(filcss)) {
+                    $(`#${ids}`).prepend('<link href="' + global.config.template + global.config.dir.modul + '/' + arr_url[1] + '/css/' + ids + '.css"  type="text/css" rel="stylesheet">');
+                }
+            }
         }
     }
 
@@ -65,11 +75,21 @@ module.exports.parser = async function(data) {
     if (fs.existsSync(director)) {
         files = fs.readdirSync(director);
         for (file of files) {
-            var rhtml = fs.readFileSync(director + file, "utf8");
-            var ids = file.replace('.html', '');
-            global.function.get_io({
-                script: '$("#' + ids + '").html(`' + rhtml + '`);'
-            })
+            if (fs.lstatSync(director + file).isFile()) {
+                var rhtml = fs.readFileSync(director + file, "utf8");
+                var ids = file.replace('.html', '');
+                var filjs = global.config.dir.clientmodul + arr_url[1] + '/js/' + ids + '.js';
+                if (fs.existsSync(filjs)) {
+                    rhtml += '<script src="' + global.config.template + global.config.dir.modul + '/' + arr_url[1] + '/js/' + ids + '.js"></script>';
+                }
+                var filcss = global.config.dir.clientmodul + arr_url[1] + '/css/' + ids + '.css';
+                if (fs.existsSync(filcss)) {
+                    rhtml = '<link href="' + global.config.template + global.config.dir.modul + '/' + arr_url[1] + '/css/' + ids + '.css"  type="text/css" rel="stylesheet">' + rhtml;
+                }
+                global.function.get_io({
+                    script: '$("#' + ids + '").html(`' + rhtml + '`);'
+                })
+            }
         }
     }
 }

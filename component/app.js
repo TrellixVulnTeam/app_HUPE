@@ -56,7 +56,7 @@ module.exports = class apps {
         } else {
             var css = path.dirname(files) + '/js/' + path.basename(files).replace(path.extname(files), '.js');
             if (fs.existsSync(css)) {
-                return `<script src="${global.config.template}${path.dirname(file)}/js/${path.basename(files).replace(path.extname(files), '.js')}">`;
+                return `<script src="${global.config.template}${path.dirname(file)}/js/${path.basename(files).replace(path.extname(files), '.js')}"></script>`;
             }
         }
         return '';

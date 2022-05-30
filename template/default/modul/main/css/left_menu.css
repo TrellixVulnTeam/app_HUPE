@@ -35,6 +35,10 @@
 
 .headbut_menu span {
     font-size: 20px;
-    color: #00000094;
+    color: #838383;
     cursor: pointer;
+}
+
+.headbut_menu span:hover {
+    color: #5b5fc7;
 }

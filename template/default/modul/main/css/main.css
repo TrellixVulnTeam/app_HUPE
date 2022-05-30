@@ -44,3 +44,24 @@
 .clavatart {
     background-color: inherit;
 }
+
+.cl_body {
+    width: auto;
+    padding: 10px;
+    display: flex;
+    flex: auto;
+    flex-direction: column-reverse;
+    height: calc(100% - 71px);
+    justify-content: flex-end;
+}
+
+.cl_content {
+    height: 100%;
+}
+
+.clformas {
+    width: fit-content;
+    padding: 6px 31px;
+    min-width: 482px;
+    background-color: #ffffffb3;
+}

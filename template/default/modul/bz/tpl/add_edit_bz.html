@@ -1,0 +1,31 @@
+<div id="fom-window">
+    <div id="idaddbz">
+        <div class="k-block k-shadow clformas">
+            Это проба
+        </div>
+    </div>
+
+
+    <script>
+        var wind = $("#idaddbz").kendoWindow({
+            title: "Создать базу знаний",
+            actions: ["close"],
+            draggable: false,
+            resizable: false,
+            visible: false,
+            modal: true,
+            pinned: false,
+            close: function() {
+                setTimeout(() => {
+                    $('#fom-window').remove_elem();
+                    $('.k-window, .k-overlay').remove();
+                }, 1000);
+
+            }
+        }).data("kendoWindow");
+
+        wind.center();
+        $(".k-window").css('top', '10%');
+        wind.open();
+    </script>
+</div>
