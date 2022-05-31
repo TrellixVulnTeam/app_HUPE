@@ -92,6 +92,7 @@ var wind = $("#idaddbz").kendoWindow({
             $('#fom-window').remove_elem();
             $('.k-window, .k-overlay').remove();
             $('#idadd_bz').css('display', '');
+            $('.k-animation-container').remove();
         }, 500);
 
     }
