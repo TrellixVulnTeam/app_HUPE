@@ -25,11 +25,13 @@ function LoadConfig() {
 global.config = LoadConfig();
 global.config.prefiks = '';
 global.config.dir.client = global.path.join(__dirname, '..', global.config.dir.template + '/' + global.config.dir.skin + '/');
+global.config.dir.server = global.path.join(__dirname, '..');
 global.config.template = global.config.prefiks + global.config.dir.template + '/' + global.config.dir.skin + '/';
 global.config.kendocss = global.config.prefiks + global.config.dir.template + '/' + global.config.dir.skin + '/css/kendo/';
 global.config.kendojs = global.config.prefiks + global.config.dir.template + '/' + global.config.dir.skin + '/js/kendo/';
 global.config.js = global.config.dir.template + '/' + global.config.dir.skin + '/js/';
 global.config.jscomponent = global.config.prefiks + global.config.dir.template + '/' + global.config.dir.skin + '/js/component/';
 global.config.css = global.config.prefiks + global.config.dir.template + '/' + global.config.dir.skin + '/css/';
+global.config.server.url = config.server.http + '://' + config.server.host + '/';
 
 global.config.dir.clientmodul = global.config.dir.client + global.config.dir.modul + '/';

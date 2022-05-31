@@ -1,4 +1,5 @@
 $('#idadd_bz').on('click', function() {
+    $(this).css('display', 'none')
     data = {
         modul: {
             name: "bz",

@@ -1,31 +1,29 @@
 <div id="fom-window">
+    <link href="`{global.config.css}`image-uploader.css" type="text/css" rel="stylesheet">
+    <script src="`{config.jscomponent}`image-uploader.js"></script>
     <div id="idaddbz">
-        <div class="k-block k-shadow clformas">
-            Это проба
-        </div>
+        <form id="formaddbz" class="clformas" enctype="multipart/form-data">
+            <div class="sectionbz">
+                <input name="namebz" style="width: 100%;padding-left: 10px;" validationMessage="Поле обязательно для заполнения" required />
+                <div>
+                    <input name="ident" style="width: 100%;padding-left: 10px;" validationMessage="Поле обязательно для заполнения" required />
+                    <span class="nocheck k-icon" id="idcheind" style="display: none;"></span>
+                </div>
+                <div class="k-form-hint kmyhint"><span>Формат ссылки: `{global.config.server.url}`bz/<span id="idprimsilka"></span></span>
+                </div>
+                <textarea id="idbzopisan" data-max-msg="Enter value between 1 and 200"></textarea>
+
+                <span data-role="floatinglabel" class="k-floating-label-container k-textarea-container">
+                <label class="k-label k-input-label" for="idbzopisan">Загрузить обложку</label>
+                <div class="input-images"></div>
+                </span>
+            </div>
+            <div class="clbuttongrup">
+                <button id="idbutotmena">Отмена</button>
+                <button type="submit" id="idbutsave">Сохранить</button>
+            </div>
+        </form>
+
     </div>
-
-
-    <script>
-        var wind = $("#idaddbz").kendoWindow({
-            title: "Создать базу знаний",
-            actions: ["close"],
-            draggable: false,
-            resizable: false,
-            visible: false,
-            modal: true,
-            pinned: false,
-            close: function() {
-                setTimeout(() => {
-                    $('#fom-window').remove_elem();
-                    $('.k-window, .k-overlay').remove();
-                }, 1000);
-
-            }
-        }).data("kendoWindow");
-
-        wind.center();
-        $(".k-window").css('top', '10%');
-        wind.open();
-    </script>
+    `{aps.compile("modul/bz/tpl/js/add_edit.js", "js")}`
 </div>

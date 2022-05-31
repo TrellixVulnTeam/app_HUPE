@@ -14,7 +14,7 @@ module.exports = async function(data) {
     } else {
         var arr_url = data.url.split('/');
     }
-    html = data.html;
+    var html = data.html;
 
     const { window } = new global.jsdom('<body>' + html + '</body');
     var $ = require('jquery')(window);
@@ -49,8 +49,9 @@ module.exports = async function(data) {
             }
         }
     }
-
-    return await $('body').html();
+    html = $('body').html();
+    html = await global.aps.compilefile(html)
+    return html;
 }
 
 module.exports.parser = async function(data) {
@@ -86,6 +87,7 @@ module.exports.parser = async function(data) {
                 if (fs.existsSync(filcss)) {
                     rhtml = '<link href="' + global.config.template + global.config.dir.modul + '/' + arr_url[1] + '/css/' + ids + '.css"  type="text/css" rel="stylesheet">' + rhtml;
                 }
+                rhtml = await global.aps.compilefile(rhtml)
                 global.function.get_io({
                     script: '$("#' + ids + '").html(`' + rhtml + '`);'
                 })

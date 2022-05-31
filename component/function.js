@@ -1,3 +1,5 @@
+const fs = require("fs");
+
 module.exports.error = function(err) {
     if (global.socket)
         global.socket.emit('error', err);
@@ -52,4 +54,19 @@ module.exports.set_status = async function(data) {
         await global.function.get_io({
             script: script,
         }, 'all')
+}
+
+module.exports.existUpload = async function() {
+    var director = global.config.dir.server + global.config.dir.upload;
+    if (!fs.existsSync(director)) {
+        fs.mkdirSync(director);
+    }
+}
+
+module.exports.existUploadiconBZ = async function() {
+    this.existUpload();
+    var director = global.config.dir.server + global.config.dir.upload + '/icon_bz/';
+    if (!fs.existsSync(director)) {
+        fs.mkdirSync(director);
+    }
 }

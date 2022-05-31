@@ -14,7 +14,8 @@
         "template": "/template",
         "skin": "default",
         "modul": "modul",
-        "img": "/img/"
+        "img": "/img/",
+        "upload": "/upload/"
     },
     "site": {
         "name": "FTO apperande"
