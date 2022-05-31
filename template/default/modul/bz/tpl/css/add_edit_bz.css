@@ -67,3 +67,16 @@ span.nocheck {
 span.nocheck::before {
     content: "\e11c";
 }
+
+.sectionbz hr {
+    margin-top: 18px;
+    border-color: #ffffff1f;
+    background-color: #d9d9d938;
+}
+
+.kmyhint span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 480px;
+}

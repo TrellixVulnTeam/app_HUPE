@@ -105,6 +105,8 @@ module.exports = class apps {
             };
             return html`;
             html = await eval(`(async (html) => {` + ctxScript + `})(html)`);
+            if (rezim.toLowerCase() == 'js')
+                html = '<script>' + html + '</script>';
             var a = html;
         };
         return html;

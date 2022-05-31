@@ -70,3 +70,12 @@ module.exports.existUploadiconBZ = async function() {
         fs.mkdirSync(director);
     }
 }
+
+module.exports.compiledropdownlist = async function(tabl, column, sort = '') {
+    var arrcol = column.split(',');
+    var sql = `SELECT ${column} FROM ${tabl} ${sort}`;
+    var rows = await global.db.getall(sql);
+
+    return await JSON.stringify(rows);
+
+}

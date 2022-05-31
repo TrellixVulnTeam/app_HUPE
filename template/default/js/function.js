@@ -1,4 +1,4 @@
-var error_notifi
+var error_notifi, notifi;
 
 function error_show(message, time = 5000) {
     if (!$('#notification')[0]) {
@@ -9,6 +9,21 @@ function error_show(message, time = 5000) {
         autoHideAfter: time
     })
     error_notifi.show(message, 'error')
+}
+
+function message_show(message, rezim, time = 5000) {
+    if (!$('#idmessage')[0]) {
+        $('body').append('<span id="idmessage" style="display:none;"></span>')
+        notifi = $('#idmessage').kendoNotification().data('kendoNotification')
+    }
+    notifi.setOptions({
+            autoHideAfter: time,
+            hide: function() {
+                $('#idmessage').remove();
+            }
+        })
+        //"info", "success", "warning", and "error"
+    notifi.show(message, rezim)
 }
 
 $.prototype.add_elem = function(html) {

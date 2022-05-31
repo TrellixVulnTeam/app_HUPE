@@ -18,6 +18,7 @@ function getRandomName() {
 module.exports.save_new_bz = async function(data) {
 
     global.function.existUploadiconBZ();
+    var name_img;
     if (data.images) {
         var images = Buffer.from(data.images.buff);
         var nameext = global.path.extname(data.images.name);
@@ -25,6 +26,7 @@ module.exports.save_new_bz = async function(data) {
         var files = global.config.dir.server + global.config.dir.upload + `/icon_bz/${name_img}`;
         fs.writeFileSync(files, images);
     }
+    //await global.db.update(`INSERT INTO app_bz (name, ident, opisan, image, id_cat) VALUES (?,?,?,?,?)`, [data.namebz, data.ident, data.opisan, name_img]);
 }
 
 module.exports.prover_ident = async function(data) {

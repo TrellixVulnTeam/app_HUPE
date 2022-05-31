@@ -4,14 +4,18 @@
     <div id="idaddbz">
         <form id="formaddbz" class="clformas" enctype="multipart/form-data">
             <div class="sectionbz">
-                <input name="namebz" style="width: 100%;padding-left: 10px;" validationMessage="Поле обязательно для заполнения" required />
+                <input name="namebz" style="width: 100%;" validationMessage="Поле обязательно для заполнения" required />
                 <div>
-                    <input name="ident" style="width: 100%;padding-left: 10px;" validationMessage="Поле обязательно для заполнения" required />
+                    <input name="ident" style="width: 100%; padding-right: 23px !important;" validationMessage="Поле обязательно для заполнения" required />
                     <span class="nocheck k-icon" id="idcheind" style="display: none;"></span>
                 </div>
                 <div class="k-form-hint kmyhint"><span>Формат ссылки: `{global.config.server.url}`bz/<span id="idprimsilka"></span></span>
                 </div>
-                <textarea id="idbzopisan" data-max-msg="Enter value between 1 and 200"></textarea>
+                <hr>
+                <span data-role="floatinglabel" class="k-floating-label-container k-textarea-container">
+                    <label class="k-label k-input-label" for="idbzopisan">Категория</label>
+                <input id="idcategory" name="category" value="1" style="width: 100%;" />
+                <textarea id="idbzopisan" name="opisan"></textarea>
 
                 <span data-role="floatinglabel" class="k-floating-label-container k-textarea-container">
                 <label class="k-label k-input-label" for="idbzopisan">Загрузить обложку</label>
@@ -25,5 +29,8 @@
         </form>
 
     </div>
-    `{aps.compile("modul/bz/tpl/js/add_edit.js", "js")}`
+    <script id="noDataTemplatecategory" type="text/x-kendo-tmpl">
+        <button onclick="addNewCategory('#: instance.element[0].id #', '#: instance.filterInput.val() #')" data-role="button" class="k-button k-button-md k-rounded-md k-button-solid k-button-solid-primary " role="button" aria-disabled="false" tabindex="0"><span class="k-icon k-i-add k-button-icon"></span><span class="k-button-text">Добавить</span></button>
+    </script>
+    `{aps.compilesync("modul/bz/tpl/js/add_edit.js",null, "js")}`
 </div>

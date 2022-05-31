@@ -19,6 +19,26 @@ var identif = $("[name=ident]").kendoTextBox({
     rounded: "full"
 }).data("kendoTextBox");
 
+var dcategory = $("#idcategory").kendoDropDownList({
+    dataTextField: "name",
+    dataValueField: "id",
+    filter: "startswith",
+    noDataTemplate: $("#noDataTemplatecategory").html(),
+    dataSource: `{await global.function.compiledropdownlist("app_bz_cat","id, name", "ORDER BY id")}`,
+    index: 0,
+    //change: onChange
+}).data("kendoDropDownList");;
+
+function addNewCategory(widgetId, value) {
+    var dataSource = dcategory.dataSource;
+    dataSource.add({
+        name: value,
+        id: value
+    });
+    dcategory.select(dataSource.view().length - 1);
+    //dcategory.close();
+};
+
 $("#idbzopisan").kendoTextArea({
     rows: 3,
     maxLength: 200,
@@ -51,23 +71,12 @@ $('#idbutotmena').kendoButton({
     }
 })
 
-$('#formaddbz').on('submit', function() {
-    var $input = $(".image-uploader input");
-    data = {
-        modul: {
-            name: "bz",
-            file: "bz",
-            function: "save_new_bz",
-        },
-        images: {
-            buff: $input.prop('files')[0],
-            name: $input.prop('files')[0].name
-        }
-    }
-    data = serialize("#formaddbz", data);
-    get_io(data)
 
-    return false;
+$('#formaddbz').keydown(function(event) {
+    if (event.keyCode == 13) {
+        event.preventDefault();
+        return false;
+    }
 })
 
 var wind = $("#idaddbz").kendoWindow({
@@ -128,3 +137,31 @@ function prover_ident() {
         get_io(data)
     }, 200);
 }
+
+$('#formaddbz').on('submit', function(event) {
+    if ($('.nocheck')[0]) {
+        message_show('Идентификатор занят', 'warning');
+        event.preventDefault();
+        return false;
+    }
+    var $input = $(".image-uploader input");
+    var imfile;
+    if ($input.prop('files')[0]) {
+        imfile = {
+            buff: $input.prop('files')[0],
+            name: $input.prop('files')[0].name
+        }
+    }
+    data = {
+        modul: {
+            name: "bz",
+            file: "bz",
+            function: "save_new_bz",
+        },
+        images: imfile
+    }
+    data = serialize("#formaddbz", data);
+    get_io(data)
+
+    return false;
+})
